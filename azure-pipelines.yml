@@ -25,5 +25,7 @@ steps:
     C:
     cd C:\hostedtoolcache\windows
     dir
-    cd _tool\oc\3.11.x\x64\
+    cd oc
+    dir
+    cd 3.11.0\x64\
     dir
