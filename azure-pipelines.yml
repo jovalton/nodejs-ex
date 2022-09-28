@@ -22,3 +22,7 @@ steps:
     cd ..
     dir
     echo %AGENT_TOOLSDIRECTORY%
+    cd C:\hostedtoolcache\windows
+    dir
+    cd _tool\oc\3.11.x\x64\
+    dir
