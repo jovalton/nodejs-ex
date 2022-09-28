@@ -19,3 +19,6 @@ steps:
     dir
     cd ..
     dir
+    cd ..
+    dir
+    echo %AGENT_TOOLSDIRECTORY%
