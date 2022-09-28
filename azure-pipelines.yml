@@ -1,20 +1,15 @@
+trigger:
+- master
 
-name: CI
+pool:
+  vmImage: 'windows-latest'
 
-on: [push]
-
-jobs:
-  build:
-
-    runs-on: windows-latest
-
-    steps:
-    - uses: actions/checkout@v1
-    - task: oc-setup@2
-      inputs:
-        connectionType: 'OpenShift Connection Service'
-        openshiftService: 'My Openshift'
-        version: '3.11.0'
-    - script: |
-        oc project testlu
-        where oc
+steps:
+- task: oc-setup@2
+  inputs:
+    connectionType: 'OpenShift Connection Service'
+    openshiftService: 'My Openshift'
+    version: '3.11.0'
+- script: |
+    oc project testlu
+    where oc
