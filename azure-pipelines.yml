@@ -15,4 +15,4 @@ steps:
 - script: |
     oc project testlu
     where oc
-    dir
+    dir ../..
