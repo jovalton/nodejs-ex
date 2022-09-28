@@ -5,6 +5,8 @@ pool:
   vmImage: 'windows-latest'
 
 steps:
+- checkout: self
+  persistCredentials: true
 - task: oc-setup@2
   inputs:
     connectionType: 'OpenShift Connection Service'
