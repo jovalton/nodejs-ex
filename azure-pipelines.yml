@@ -7,7 +7,7 @@ pool:
 steps:
 - checkout: self
   persistCredentials: true
-- task: oc-setup@2
+- task: oc-setup@3
   inputs:
     connectionType: 'OpenShift Connection Service'
     openshiftService: 'My Openshift'
