@@ -2,7 +2,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'windows-latest'
+  vmImage: 'ubuntu-latest'
 
 steps:
 - checkout: self
@@ -14,18 +14,9 @@ steps:
     version: '3.11.0'
 - script: |
     oc project testlu
-    where oc
-    cd ..
-    dir
-    cd ..
-    dir
-    cd ..
-    dir
-    echo %AGENT_TOOLSDIRECTORY%
-    C:
-    cd C:\hostedtoolcache\windows
-    dir
-    cd oc
-    dir
-    cd 3.11.0\x64\
-    dir
+    cd $AGENT_TOOLSDIRECTORY
+    ls
+    cd oc 
+    ls
+    cd 3.11.0/x64
+    ls
