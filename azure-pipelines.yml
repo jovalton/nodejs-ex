@@ -5,18 +5,15 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- checkout: self
-  persistCredentials: true
-- task: oc-setup@3
+- task: oc-cmd@3
   inputs:
     connectionType: 'OpenShift Connection Service'
-    openshiftService: 'My Openshift'
-    version: '3.11.0'
-- script: |
-    oc project testlu
-    cd $AGENT_TOOLSDIRECTORY
-    ls
-    cd oc 
-    ls
-    cd 3.11.0/x64
-    ls
+    openshiftService: 'VSTS example'
+    version: '4.2'
+    cmd: 'oc start-build nodejs-ex --follow'
+- task: oc-cmd@3
+  inputs:
+    connectionType: 'OpenShift Connection Service'
+    openshiftService: 'VSTS example'
+    version: '4.2'
+    cmd: 'oc status'
